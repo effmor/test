@@ -15,7 +15,7 @@ const sourceMap = require('./webpack/sourceMap');
 const filesDev = require('./webpack/filesDev');
 const filesProd = require('./webpack/filesProd');
 const babel = require('./webpack/babel');
-const favicon = require('./webpack/favicon');
+// const favicon = require('./webpack/favicon');
 const devConf = require('./webpack/webpack.dev.conf');
 const prodConf = require('./webpack/webpack.prod.conf');
 
@@ -60,7 +60,7 @@ module.exports = (env, argv) => {
     };
   }
   if (argv.mode === 'production') {
-    return merge([commonConfig(env, argv), prodConf(), extractCSS(), favicon(), filesProd()]);
+    return merge([commonConfig(env, argv), prodConf(), extractCSS(),  filesProd()]);//favicon(),
   }
   if (argv.mode === 'development') {
     return merge([

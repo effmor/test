@@ -4,13 +4,10 @@ const publicPath = '/vast/';
 
 module.exports = () => ({
   devServer: {
-    host: 'kholobok.biz',
-    // host: 'localhost',
+    host: 'localhost',
     disableHostCheck: true,
-    // port: 80,
+    port: 8080,
     open: true,
-    https: true,
-    port: 443,
     historyApiFallback: {
       index: url.parse(publicPath).pathname,
     },
